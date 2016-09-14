@@ -1,0 +1,36 @@
+<div class="col-md-12">
+   <div id="bike">
+       <% for bike in @bikes %>
+           <div class="col-sm-2">
+               <div class="bike-item" id=<%= "bike_#{bike.id}" %>>
+                  <a href="#bikeModal" class="bike-link" data-toggle="modal">
+                     <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <%= image_tag(bike.avatars[0].url , class: "img-responsive") %>
+                  </a> 
+                  <div class="bike-inform">
+                    <div id="name">
+                        <b><%= bike.name %></b>   
+                    </div>        
+                    <div id="brand">
+                        <%= bike.brand %>
+                    </div>
+                    <div id="price">
+                        <%= bike.price %>
+                    </div>
+                    <div id="market_time">
+                        <%= bike.market_time %>
+                    </div>
+                    <div class="function-buttons">
+                        <%= favorite_tag bike %>
+                    </div>
+                  </div>
+              </div>
+          </div> 
+       <% end %> 
+   </div>
+</div>
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>

@@ -1,0 +1,139 @@
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#bike">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li class="user">
+                        <%= user_tag  %>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!--Carousel -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg" alt="Chania" class="center-block">
+          <div class="carousel-caption">
+            <h3>Chania</h3>
+            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" alt="Chania" class="center-block">
+          <div class="carousel-caption">
+            <h3>Chania</h3>
+            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg" alt="Flower" class="center-block">
+          <div class="carousel-caption">
+            <h3>Flowers</h3>
+            <p>Beatiful flowers in Kolymbari, Crete.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" alt="Flower" class="center-block">
+          <div class="carousel-caption">
+            <h3>Flowers</h3>
+            <p>Beatiful flowers in Kolymbari, Crete.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <!-- Bikes Grid Section -->
+    <section id="bike">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Bike</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <% @bikes.each do |bike| %>
+                    <%= render "bike" , bike: bike %>
+                <% end %>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Download Theme
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <% @bikes.each do |bike| %>
+        <%= render "bike_model" , bike: bike %>
+    <% end %>

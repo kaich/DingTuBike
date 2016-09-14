@@ -1,0 +1,13 @@
+<div class="col-sm-4 bike-item">
+    <a href=<%= "#bikeModal#{bike.id}" %> class="bike-link" data-toggle="modal">
+        <div class="caption">
+            <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+        </div>
+        <% if bike.avatars.length > 0 %>
+            <%= image_tag(bike.avatars[0].url , class:"img-responsive certer-block") %>
+        <% end %>
+        <br />
+    </a>
+</div>

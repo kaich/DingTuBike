@@ -1,0 +1,75 @@
+<!-- Portfolio Modals -->
+<div class="bike-modal modal fade" id=<%= "bikeModal#{bike.id}" %> tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Project Title</h2>
+                        <hr class="star-primary">
+                        <!--image carousel-->
+                        <div id="avatarsCarousel" class="carousel slide" data-ride="carousel">
+                          <!-- Indicators -->
+                          <ol class="carousel-indicators">
+                              <% bike.avatars.each.with_index(0) do |avatar,index| %>
+                                  <% if index == 0 %>
+                                    <li data-target="#avatarsCarousel" data-slide-to="0" class="active"></li>
+                                  <% else %>
+                                    <li data-target="#avatarsCarousel" data-slide-to= <%= index %>></li>
+                                  <% end %>
+                              <% end %>
+                          </ol>
+
+                          <!-- Wrapper for slides -->
+                          <div class="carousel-inner" role="listbox">
+                              <% bike.avatars.each.with_index(0) do |avatar,index| %>
+                              <div class="<%= (index == 0) ? "item active" : "item"%>" >
+                                    <%= image_tag(avatar.url) %>
+                                </div>
+                              <% end %>
+                          </div>
+
+                          <!-- Left and right controls -->
+                          <a class="left carousel-control" href="#avatarsCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="right carousel-control" href="#avatarsCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+
+
+                        <p class="bike-name"><%= bike.name %></p>
+                        <ul class="list-inline item-details">
+                            <li>brand:
+                                <strong><%= bike.brand %></a>
+                                </strong>
+                            </li>
+                            <li>Address:
+                                <strong><%= bike.made_address %></a>
+                                </strong>
+                            </li>
+                            <li>Date:
+                                <strong><%= bike.market_time %></a>
+                                </strong>
+                            </li>
+                            <hr />
+                            <li>information:
+                                <p><%= bike.information %></p>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

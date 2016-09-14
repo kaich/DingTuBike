@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  brand: MyString
+  model: MyString
+  madeAdress: MyString
+  marketTime: 2016-09-12
+  price: 1.5
+  information: MyString
+
+two:
+  name: MyString
+  brand: MyString
+  model: MyString
+  madeAdress: MyString
+  marketTime: 2016-09-12
+  price: 1.5
+  information: MyString
