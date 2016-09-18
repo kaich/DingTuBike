@@ -25,6 +25,13 @@ class BikesController  < ApplicationController
 
     end
 
+    def preview
+        # Initializes a Markdown parser
+        result = render_markdown params[:body]
+        
+        render text: result
+    end
+
     def show
       @bike = Bike.find(params[:id])
     end

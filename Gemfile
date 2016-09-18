@@ -39,7 +39,7 @@ gem 'sass-rails', '>= 3.2'
 
 #bootstrap3-datetimepicker
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
 
 #user manager 
 gem 'devise'
@@ -60,6 +60,12 @@ gem 'font-awesome-sass'
 #will paginate
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+
+#markdown 
+gem 'redcarpet'
+
+#前端包管理bower-rails
+gem "bower-rails", "~> 0.10.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,14 @@
+<div class="panel panel-primary">
+   <div class="panel-heading">
+      <%= image_tag(@activity.cover.url) %> 
+   </div> 
+   <div class="panel-body">
+      start time: <%= @activity.start_time %>  
+      end time: <%= @activity.end_time %>  
+      <hr />
+      <h5>Rule:</h5>
+      <p><%= @activity.rule %></p>
+      <h5>Information:</h5>
+      <p><%= @activity.information %></p>
+   </div>
+</div>

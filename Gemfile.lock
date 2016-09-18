@@ -55,8 +55,9 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootstrap3-datetimepicker-rails (4.15.35)
+    bootstrap3-datetimepicker-rails (4.17.42)
       momentjs-rails (>= 2.8.1)
+    bower-rails (0.10.0)
     builder (3.2.2)
     byebug (9.0.5)
     carrierwave-qiniu (0.1.5)
@@ -151,6 +152,7 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    redcarpet (3.3.4)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
     rest-client (1.8.0)
@@ -208,7 +210,8 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   bootstrap-sass (~> 3.3.6)
-  bootstrap3-datetimepicker-rails (~> 4.15.35)
+  bootstrap3-datetimepicker-rails (~> 4.17.42)
+  bower-rails (~> 0.10.0)
   byebug
   carrierwave!
   carrierwave-qiniu
@@ -222,6 +225,7 @@ DEPENDENCIES
   momentjs-rails (>= 2.9.0)
   qiniu
   rails (= 4.2.6)
+  redcarpet
   sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   spring
