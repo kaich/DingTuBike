@@ -7,8 +7,8 @@
       end time: <%= @activity.end_time %>  
       <hr />
       <h5>Rule:</h5>
-      <p><%= @activity.rule %></p>
+      <p><%= render_markdown @activity.rule %></p>
       <h5>Information:</h5>
-      <p><%= @activity.information %></p>
+      <p><%= render_markdown @activity.information %></p>
    </div>
 </div>

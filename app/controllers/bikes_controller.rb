@@ -13,6 +13,8 @@ class BikesController  < ApplicationController
     def create
       @bike = Bike.new(bike_params)
 
+      debugger
+
       respond_to do |wants|
           if @bike.save
               flash[:success] = "Successfully created..."
@@ -25,12 +27,7 @@ class BikesController  < ApplicationController
 
     end
 
-    def preview
-        # Initializes a Markdown parser
-        result = render_markdown params[:body]
-        
-        render text: result
-    end
+
 
     def show
       @bike = Bike.find(params[:id])

@@ -1,2 +1,13 @@
 module ActivitiesHelper
+    def favorite?(model)
+          current_user.liked? model 
+    end
+
+    def favorite_activity_tag(activity)
+      isfavorite = favorite?(activity)
+      fa_icon = isfavorite ? "fa fa-heart" : "fa fa-heart-o"
+      fa_tag = "<i class=\"#{fa_icon}\"></i>".html_safe
+      link_to  fa_tag , favorite_activity_path(activity) , method: :patch , remote: true ,class:'btn btn-primary', favorite: isfavorite
+    end
+
 end

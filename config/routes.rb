@@ -9,13 +9,12 @@ Rails.application.routes.draw do
   resources :bikes do 
       member do
          patch :favorite
-         post :preview
       end
   end
 
   resources :activities do 
       member do
-         post :preview 
+        patch :favorite
       end
   end
 

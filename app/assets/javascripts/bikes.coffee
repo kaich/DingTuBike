@@ -4,12 +4,3 @@
 
 $ -> $('.datetimepicker').datetimepicker({format: 'MMMM Do YYYY, h:mm'})
 
-
-$ -> $('#information').markdown savable:true , onPreview:(e) ->
-   
-  $.post "./preview",
-    {body: $('div#content > textarea').val()},
-    (data) ->
-      $("#preview").html(data)
-      true
-  false

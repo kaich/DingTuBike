@@ -1,5 +1,17 @@
 class ActivitiesController < ApplicationController
 
+    include ActivitiesHelper
+
+    def index
+      @activities = Activity.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
+    
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render xml: @activities }
+      end
+    end
+
+
     def new
         @activity = Activity.new
     end
@@ -13,7 +25,7 @@ class ActivitiesController < ApplicationController
                 wants.html { redirect_to(@activity) }
                 wants.xml { render :xml => @activity, :status => :created, :location => @activity }
             else
-                flash[:dander] = 'modemodemodel was successfully created.'
+                flash[:danger] = 'modemodemodel was successfully created.'
                 wants.html { render :action => "new" }
                 wants.xml { render :xml => @activity.errors, :status => :unprocessable_entity }
             end
@@ -30,6 +42,51 @@ class ActivitiesController < ApplicationController
         end
     end
 
+
+    def favorite 
+
+        @activity = Activity.find(params[:id])
+        @isfavorite = favorite? @activity
+        if @isfavorite 
+            current_user.dislikes @activity                
+            @isfavorite = false
+        else
+            current_user.likes @activity
+            @isfavorite = true
+        end
+    end
+
+
+    def edit
+      @activity = Activity.find(params[:id])
+    end
+
+    
+    def update
+      @activity = Activity.find(params[:id])
+    
+      respond_to do |format|
+        if @activity.update(activity_params)
+          flash[:notice] = 'Activity was successfully updated.'
+          format.html { redirect_to(@activity) }
+          format.xml  { head :ok }
+        else
+          format.html { render action: 'edit' }
+          format.xml  { render xml: @activity.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+
+    def destroy
+      @activity = Activity.find(params[:id])
+      @activity.destroy
+    
+      respond_to do |format|
+        format.html { redirect_to(activities_url) }
+        format.xml  { head :ok }
+      end
+    end
 
 
     private
