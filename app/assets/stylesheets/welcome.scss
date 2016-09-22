@@ -388,6 +388,33 @@ section.success {
 }
 
 
+
+#recent-activities {
+  .activity-content {
+    position: relative;
+    height: 240px;
+    padding: 0 20px;
+    margin-top: 10px;
+    text-align: center;
+    .panel {
+      background-color: #eee;
+      .name {
+        margin-top: 5px;
+        margin-bottom: 20px; 
+      }
+      .sub-name {
+      }
+      .cover {
+        margin-bottom: 20px;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
 footer {
 	color: white;
 	h3 {

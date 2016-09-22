@@ -61,7 +61,7 @@ class ActivitiesController < ApplicationController
       @activity = Activity.find(params[:id])
     end
 
-    
+
     def update
       @activity = Activity.find(params[:id])
     

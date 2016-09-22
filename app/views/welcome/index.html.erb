@@ -10,7 +10,7 @@
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
-        <% @activities.each.with_index(0) do |activity,index| %>
+        <% @hot_activities.each.with_index(0) do |activity,index| %>
           <div class="<%= index == 0 ? "item active" : "item"  %>">
             <%= image_tag(activity.cover.url , class:"center-block" ,alt:activity.name) %>
             <div class="carousel-caption">
@@ -45,6 +45,22 @@
                 <% @bikes.each do |bike| %>
                     <%= render "bike" , bike: bike %>
                 <% end %>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- activity line Section -->
+    <section id="recent-activities">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2><%= link_to :Activity , activities_url %></h2>
+                    <hr class="bike-primary">
+                </div>
+            </div>
+            <div class="row">
+                <%= render "recent_activities" , activities: @recent_activities %>
             </div>
         </div>
     </section>

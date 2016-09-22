@@ -1,0 +1,17 @@
+<% activities.each.with_index do |activity,index| %>
+  <div class="col-sm-3">
+    <div class="activity-content">
+      <div class="panel panel-default">
+        <div class="name">
+          <%= link_to activity.name, activity_path(activity) %>
+        </div>
+        <div class="cover">
+          <%= image_tag(activity.cover.url , class:"img-round") %> 
+        </div>
+        <div class="sub-name">
+          <%= "This is a simple activity" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
