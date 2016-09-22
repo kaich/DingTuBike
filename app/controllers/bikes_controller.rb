@@ -3,7 +3,7 @@ class BikesController  < ApplicationController
     include BikesHelper
 
     def index
-      @bikes = Bike.paginate(:page => params[:page], :per_page => 3)
+      @bikes = Bike.search_by("name",params[:search]).paginate(:page => params[:page], :per_page => 20)
     end
 
     def new
@@ -13,14 +13,12 @@ class BikesController  < ApplicationController
     def create
       @bike = Bike.new(bike_params)
 
-      debugger
-
       respond_to do |wants|
           if @bike.save
               flash[:success] = "Successfully created..."
               wants.html { redirect_to(@bike) }
           else
-              flash[:danger] = "Successfully created..."
+              flash[:danger] = "Failed created..."
               wants.html {render action: "new"}
           end
       end
@@ -28,18 +26,31 @@ class BikesController  < ApplicationController
     end
 
 
-
     def show
       @bike = Bike.find(params[:id])
     end
 
-    def edit
 
+    def edit
+      @bike = Bike.find(params[:id])
     end
+
 
     def update
-
+      @bike = Bike.find(params[:id])
+    
+      respond_to do |format|
+        if @bike.update(bike_params)
+          flash[:notice] = ' was successfully updated.'
+          format.html { redirect_to(@bike) }
+          format.xml  { head :ok }
+        else
+          format.html { render action: 'edit' }
+          format.xml  { render xml: @bike.errors, status: :unprocessable_entity }
+        end
+      end
     end
+
 
     def favorite 
         @bike = Bike.find(params[:id])

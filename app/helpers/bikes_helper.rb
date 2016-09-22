@@ -1,7 +1,11 @@
 module BikesHelper
 
     def favorite?(model)
+      if current_user 
         current_user.liked? model 
+      else
+        return false
+      end
     end
 
     def favorite_bike_tag(bike)

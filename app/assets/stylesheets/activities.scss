@@ -1,3 +1,33 @@
 // Place all the styles related to the activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.activity-content {
+  padding: 20px;
+  .activity-title {
+    text-align: center;
+  }
+  .activity-body {
+    margin-top: 50px;
+    .activity-time {
+      height: 50px;
+      .start-time,
+      .end-time {
+        text-align: center;
+        color: #333;
+      }
+    }
+    .activity-intro {
+      margin-top: 50px;
+    }
+  }
+}
+
+
+.start-time {
+  @include prefix_fa_icon("\f274"); 
+}
+
+.end-time {
+  @include prefix_fa_icon("\f273"); 
+}

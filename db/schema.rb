@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918065716) do
+ActiveRecord::Schema.define(version: 20160920020046) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
@@ -19,10 +19,25 @@ ActiveRecord::Schema.define(version: 20160918065716) do
     t.date     "end_time"
     t.string   "rule"
     t.string   "information"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "cover"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
+
+  add_index "activities", ["cached_votes_down"], name: "index_activities_on_cached_votes_down"
+  add_index "activities", ["cached_votes_score"], name: "index_activities_on_cached_votes_score"
+  add_index "activities", ["cached_votes_total"], name: "index_activities_on_cached_votes_total"
+  add_index "activities", ["cached_votes_up"], name: "index_activities_on_cached_votes_up"
+  add_index "activities", ["cached_weighted_average"], name: "index_activities_on_cached_weighted_average"
+  add_index "activities", ["cached_weighted_score"], name: "index_activities_on_cached_weighted_score"
+  add_index "activities", ["cached_weighted_total"], name: "index_activities_on_cached_weighted_total"
 
   create_table "bikes", force: :cascade do |t|
     t.string   "name"
@@ -34,12 +49,26 @@ ActiveRecord::Schema.define(version: 20160918065716) do
     t.string   "information"
     t.integer  "bikeable_id"
     t.string   "bikeable_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.text     "avatars"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
 
   add_index "bikes", ["bikeable_type", "bikeable_id"], name: "index_bikes_on_bikeable_type_and_bikeable_id"
+  add_index "bikes", ["cached_votes_down"], name: "index_bikes_on_cached_votes_down"
+  add_index "bikes", ["cached_votes_score"], name: "index_bikes_on_cached_votes_score"
+  add_index "bikes", ["cached_votes_total"], name: "index_bikes_on_cached_votes_total"
+  add_index "bikes", ["cached_votes_up"], name: "index_bikes_on_cached_votes_up"
+  add_index "bikes", ["cached_weighted_average"], name: "index_bikes_on_cached_weighted_average"
+  add_index "bikes", ["cached_weighted_score"], name: "index_bikes_on_cached_weighted_score"
+  add_index "bikes", ["cached_weighted_total"], name: "index_bikes_on_cached_weighted_total"
 
   create_table "journeys", force: :cascade do |t|
     t.string   "name"

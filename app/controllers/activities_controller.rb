@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
     include ActivitiesHelper
 
     def index
-      @activities = Activity.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
+      @activities = Activity.search_by("name",params[:search]).paginate(:page => params[:page], :per_page => 20)
     
       respond_to do |format|
         format.html # index.html.erb
@@ -21,11 +21,11 @@ class ActivitiesController < ApplicationController
         
         respond_to do |wants|
             if @activity.save
-                flash[:success] = 'modemodemodel was successfully created.'
+                flash[:success] = 'Activity was successfully created.'
                 wants.html { redirect_to(@activity) }
                 wants.xml { render :xml => @activity, :status => :created, :location => @activity }
             else
-                flash[:danger] = 'modemodemodel was successfully created.'
+                flash[:danger] = 'Activity was failed created.'
                 wants.html { render :action => "new" }
                 wants.xml { render :xml => @activity.errors, :status => :unprocessable_entity }
             end

@@ -3,22 +3,18 @@ class Activity < ActiveRecord::Base
 
   acts_as_votable
 
-  validate :validate_favorite_count
+  #validate :validate_favorite_count
 
-  def validate_favorite_count
-    favorite_count = current_user.get_voted(Activity)
-    if favorite_count >= 1
-      errors.add(:favorite, "add favorite activity up to max count!")
-    end
-  end
+  #def validate_favorite_count
+    #if current_user
+      #favorite_count = current_user.get_voted(Activity)
+      #if favorite_count >= 1
+        #errors.add(:favorite, "add favorite activity up to max count!")
+      #end
+    #end
+  #end
 
 
-  def self.search(search)
-    if search
-      where(['name LIKE ?', "%#{search}%"])
-    else
-      all 
-    end
-  end
+
 
 end

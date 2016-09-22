@@ -15,9 +15,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require moment
+//= require jquery-easing
 //= require bootstrap-datetimepicker
 //= require bootstrap-markdown
 //= require markdown-js/dist/markdown.js
 //= require marked
 //= require to-markdown
+//= require freelancer
 //= require_tree .

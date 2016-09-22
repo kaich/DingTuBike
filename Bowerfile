@@ -7,3 +7,4 @@ asset "bootstrap-markdown"
 asset 'markdown-js'
 asset 'marked'
 asset 'to-markdown'
+asset 'jquery-easing'

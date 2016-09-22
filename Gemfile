@@ -81,5 +81,9 @@ group :development do
 
   # generates fake data
   gem 'faker'
+
+  # deploy 
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-passenger'
 end
 
