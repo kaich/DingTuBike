@@ -239,6 +239,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.17.42)
   bower-rails (~> 0.10.0)
   byebug
+  capistrano-bundler (~> 1.1.2)
   capistrano-passenger
   capistrano-rails (~> 1.1)
   capistrano-rvm

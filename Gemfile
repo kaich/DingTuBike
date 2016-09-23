@@ -82,9 +82,11 @@ group :development do
   # generates fake data
   gem 'faker'
 
-  # deploy 
+  # deploy /usr/bin/env rake
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-passenger'
-  gem 'capistrano-rvm', :group => :development
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler', '~> 1.1.2'
 end
 
+  # deploy 
