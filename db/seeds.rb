@@ -17,6 +17,7 @@
         bike.market_time = "2012-05-07 11:12"
         bike.price = "542"
         bike.information = "This is an option that the capistrano-bundler gem uses. Bundler has a command line option called –deployment, which Capistrano uses by default. Instead of installing your gems in a common location for all apps, it localizes your gems and installs them inside the vendor directory of your Rails app. This is wonderful as it speeds up loading and isolates your application’s gems from other environments. It’s similar in concept to the RVM’s Gemsets. Unfortunately, it leads to a nasty problem for Windows users"
+        p "bike avatar: #{File.join(Rails.root, 'public/circus.png')}"
         bike.avatars = [File.open(File.join(Rails.root, 'public/circus.png'))]
       end
     end
