@@ -77,6 +77,9 @@ GEM
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     carrierwave-qiniu (0.1.5)
       carrierwave
       qiniu (~> 6.2.4)
@@ -238,6 +241,7 @@ DEPENDENCIES
   byebug
   capistrano-passenger
   capistrano-rails (~> 1.1)
+  capistrano-rvm
   carrierwave!
   carrierwave-qiniu
   coffee-rails (~> 4.1.0)
