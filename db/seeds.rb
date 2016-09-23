@@ -30,6 +30,6 @@
         activity.end_time = "2012-05-07 11:12"
         activity.rule = "This can be anything you want and it is mostly used for display purposes. We tend to use the URL of the application so the URL doesn’t have to hard coded in other places"
         activity.information = "This is an option that the capistrano-bundler gem uses. Bundler has a command line option called –deployment, which Capistrano uses by default. Instead of installing your gems in a common location for all apps, it localizes your gems and installs them inside the vendor directory of your Rails app. This is wonderful as it speeds up loading and isolates your application’s gems from other environments. It’s similar in concept to the RVM’s Gemsets. Unfortunately, it leads to a nasty problem for Windows users"
-        activity.cover = File.open(File.join("/var/www/Dingtubike/current", 'public/sports-q-c-1600-500-2.jpg'))
+        activity.cover = File.open(File.join("/var/www/Dingtubike/current/", 'public/sports-q-c-1600-500-2.jpg'))
       end
     end
