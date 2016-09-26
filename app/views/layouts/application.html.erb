@@ -13,8 +13,18 @@
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-<%= yield %>
+  <% if controller_path.include? "devise" %>
+    <section>
+      <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <%= yield %>
+        </div>
+      </div>
+    </section>
+  <% else %>
+    <%= controller_name %>
+    <%= yield %>
+  <% end %>
 
 </body>
 </html>

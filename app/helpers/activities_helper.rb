@@ -16,7 +16,8 @@ module ActivitiesHelper
 
     def delete_activity_tag(activity)
       fa_tag = "<i class=\"fa fa-trash-o\"></i>".html_safe
-      link_to  fa_tag , activity, method: :delete , class:'btn btn-danger' , class:'btn btn-danger'
+      link_to  fa_tag , activity, method: :delete , class:'btn btn-danger' 
     end
+
 
 end
