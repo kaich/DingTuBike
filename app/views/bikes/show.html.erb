@@ -37,21 +37,25 @@
 
       <h4 class="bike-name"><%= @bike.name %></h4>
       <ul class="list-inline item-details">
-          <li>brand:
+          <li>
+              <%= Bike.human_attribute_name(:brand) %>
               <strong><%= @bike.brand %></a>
               </strong>
           </li>
-          <li>Address:
+          <li>
+              <%= Bike.human_attribute_name(:made_address) %>
               <strong><%= @bike.made_address %></a>
               </strong>
           </li>
-          <li>Date:
+          <li>
+              <%= Bike.human_attribute_name(:market_time) %>
               <strong><%= @bike.market_time %></a>
               </strong>
           </li>
       </ul>       
       <hr class="bike-primary"/>
-      <div class="bike-intro">information:
+      <div class="bike-intro">
+          <%= Bike.human_attribute_name(:information) %>
           <p><%= render_markdown @bike.information %></p>
       </div>
     </div>

@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><%= link_to :Bike , bikes_url %></h2>
+                    <h2><%= link_to t(".bike") , bikes_url %></h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -50,12 +50,12 @@
     </section>
     
 
-    <!-- activity line Section -->
+    <!-- Activity Grid Section -->
     <section id="recent-activities">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><%= link_to :Activity , activities_url %></h2>
+                    <h2><%= link_to t(".activity") , activities_url %></h2>
                     <hr class="bike-primary">
                 </div>
             </div>
@@ -71,7 +71,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>About</h2>
+                    <h2><%= t ".about" %></h2>
                     <hr class="star-light">
                 </div>
             </div>
@@ -98,7 +98,7 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Location</h3>
+                        <h3><%= t ".location" %></h3>
                         <p>3481 Melrose Place
                             <br>Beverly Hills, CA 90210</p>
                     </div>
@@ -141,6 +141,7 @@
     </footer>
 
 
+    <!-- bike model -->
     <% @bikes.each do |bike| %>
         <%= render "bike_model" , bike: bike %>
     <% end %>

@@ -22,6 +22,14 @@
     }
     .activity-intro {
       margin-top: 50px;
+      .rule {
+        margin: 50px 0 30px 0;
+        color: $theme-success
+      }
+      .information {
+        margin: 50px 0 30px 0;
+        color: $theme-success
+      }
     }
   }
 }

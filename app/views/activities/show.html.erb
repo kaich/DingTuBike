@@ -13,17 +13,17 @@
         <div class="activity-body">
           <div class="activity-time">
             <div class="start-time col-sm-6">
-              start time: <%= @activity.start_time %>  
+              <%= t Activity.human_attribute_name(:start_time) %>: <%= @activity.start_time %>  
             </div>
             <div class="end-time col-sm-6">
-              end time: <%= @activity.end_time %>  
+              <%= t Activity.human_attribute_name(:end_time) %>: <%= @activity.end_time %>  
             </div>
           </div>
           <hr class="bike-primary"/>
           <div class="activity-intro">
-            <h5>Rule:</h5>
+            <h4 class="rule"><%= t Activity.human_attribute_name(:rule) %>:</h5>
             <p><%= render_markdown @activity.rule %></p>
-            <h5>Information:</h5>
+            <h4 class="information"><%= t Activity.human_attribute_name(:information) %>:</h5>
             <p><%= render_markdown @activity.information %></p>
           </div>
         </div>

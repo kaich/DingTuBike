@@ -48,24 +48,28 @@
 
 
                         <ul class="list-inline item-details">
-                            <li>brand:
+                            <li>
+                                <%= Bike.human_attribute_name(:brand) %>  
                                 <strong><%= bike.brand %></a>
                                 </strong>
                             </li>
-                            <li>Address:
+                            <li>
+                                <%= Bike.human_attribute_name(:made_address) %>
                                 <strong><%= bike.made_address %></a>
                                 </strong>
                             </li>
-                            <li>Date:
+                            <li>
+                                <%= Bike.human_attribute_name(:market_time) %>
                                 <strong><%= bike.market_time %></a>
                                 </strong>
                             </li>
                             <hr />
-                            <li>information:
+                            <li>
+                                <%= Bike.human_attribute_name(:information) %>
                                 <p><%= render_markdown bike.information %></p>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i><%= t :close %></button>
                     </div>
                 </div>
             </div>
