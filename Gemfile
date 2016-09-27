@@ -52,7 +52,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave-qiniu'
 gem 'qiniu'
-gem 'mini_magick', '3.7.0', require: false
+gem 'mini_magick'
 
 #font awesome
 gem 'font-awesome-sass'

@@ -251,7 +251,7 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
-  mini_magick (= 3.7.0)
+  mini_magick
   momentjs-rails (>= 2.9.0)
   qiniu
   rails (= 4.2.6)

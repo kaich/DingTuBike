@@ -66,8 +66,7 @@ class BikesController  < ApplicationController
 
 private
     def bike_params
-      debugger
-        params.require("bike").permit(:name,:brand,:model,:made_address,:market_time,:information,{avatars: []})
+        params.require(:bike).permit(:name,:brand,:model,:made_address,:market_time,:information,{avatars: []})
     end
 
 end
