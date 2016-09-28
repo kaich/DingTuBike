@@ -52,7 +52,7 @@ class ActivityCoverUploader < CarrierWave::Uploader::Base
   process resize_to_fill: [1600, 500]
 
   version :thumb do
-    process resize_to_fill: [100,100]
+    process resize_to_fill: [220.5,220.5*5.0/16]
   end
 
 end

@@ -46,8 +46,8 @@ class ActivitiesController < ApplicationController
 
 
     def favorite 
-
         @activity = Activity.find(params[:id])
+
         @isfavorite = favorite? @activity
         if @isfavorite 
             current_user.dislikes @activity                

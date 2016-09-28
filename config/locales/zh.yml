@@ -6,6 +6,7 @@ zh:
       activity: "活动"
       about: "关于"
       location: "地址"
+      signature: "格言"
   #devise
   log_in: "登陆"
   email: "邮箱"

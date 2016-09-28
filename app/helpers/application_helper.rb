@@ -12,6 +12,10 @@ module ApplicationHelper
     alert_type
   end
 
+  def admin
+    User.find_by(admin: true)
+  end
+
   def admin? 
     if current_user
       current_user.admin?
