@@ -8,7 +8,8 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :avatars %>
+          <%= f.label :avatars %> 
+          <span>(<%= t(:image_size) %>[900X650])</span>
           <%= f.file_field :avatars, multiple: true %>
         </div>
 

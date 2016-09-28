@@ -48,7 +48,7 @@ class BikeAvatarUploader < CarrierWave::Uploader::Base
   
   include CarrierWave::MiniMagick
 
-  #process resize_to_fit: [1600, 500]
+  process resize_to_fill: [240,65/90*240]
 
   version :thumb do
     process resize_to_fill: [900,650]
