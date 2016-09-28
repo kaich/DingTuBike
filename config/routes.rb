@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :users do
-    resources :information
+    resources :information do
+      collection do
+        get :favorite_activity 
+        get :favorite_bike 
+      end
+    end
   end
 
   resources :bikes do 

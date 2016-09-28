@@ -29,10 +29,20 @@ class Users::InformationController < ApplicationController
     end
   end
 
+
+  def favorite_activity 
+    @activities = current_user.get_voted(Activity) 
+  end
+
+
+  def favorite_bike 
+    @bikes = current_user.get_voted(Bike)  
+  end
+
   private 
 
   def user_params
-    params.require(:user).permit(:nick,:sex,:age,:home_address,:qq_number,:phone,:signature,:avatar,:avatar_cache) 
+    params.require(:user).permit(:nick,:sex,:birthday,:home_address,:qq_number,:phone,:signature,:intro,:avatar,:avatar_cache) 
   end
 
   def judge_userown 

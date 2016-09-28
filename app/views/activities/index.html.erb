@@ -14,29 +14,17 @@
       <% end %>
       <!-- activity list -->
       <table class="table">
-        <% for activity in @activities %>
-          <tr id="<%= "activity_#{activity.id}" %>">
-            <td><%= image_tag(activity.cover.thumb.url) %></td>
-            <td>
-              <%= link_to activity.name , activity_path(activity) %> <br />
-              <%= activity.start_time %> <br />
-              <%= activity.end_time %>
-            </td>
-            <td>
-              <%= favorite_activity_tag activity %>
-              <%= delete_activity_tag activity %>
-            </td>
-          </tr>
-        <% end %>
+        <%= render "shared/activity_list" , activities: @activities %>
       </table>
       <div class="text-center">
         <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
       </div>
-
-      <!-- side tool bar -->
-      <div class="tool-bar">
-          <%= link_to '<i class="fa fa-plus" aria-hidden="true">&nbsp create new</i>'.html_safe, new_activity_path , class: "btn btn-default" %>              
-      </div>
+      <% if admin? %>
+        <!-- side tool bar -->
+        <div class="tool-bar">
+            <%= link_to '<i class="fa fa-plus" aria-hidden="true">&nbsp create new</i>'.html_safe, new_activity_path , class: "btn btn-default" %>              
+        </div>
+      <% end %>
 
     </div>
   </div>

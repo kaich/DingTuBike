@@ -19,46 +19,18 @@
       <!-- bike items -->
       <div class="col-md-12">
          <div id="bike">
-             <% for bike in @bikes %>
-                 <div class="col-sm-3">
-                     <div class="bike-item" id=<%= "bike_#{bike.id}" %>>
-                        <a href=<%= bike_url(bike) %> class="bike-link" data-toggle="modal">
-                           <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <%= image_tag(bike.avatars[0].url , class: "img-responsive") %>
-                        </a> 
-                        <div class="bike-inform">
-                          <div id="name">
-                              <b><%= bike.name %></b>   
-                          </div>        
-                          <div id="brand">
-                              <%= bike.brand %>
-                          </div>
-                          <div id="price">
-                              <%= bike.price %>
-                          </div>
-                          <div id="market_time">
-                              <%= bike.market_time %>
-                          </div>
-                          <div class="function-buttons">
-                              <%= favorite_bike_tag bike %>
-                          </div>
-                        </div>
-                    </div>
-                </div> 
-             <% end %> 
+             <%= render "shared/bikes_list", bikes: @bikes%>
          </div>
       </div>
       <div class="text-center">
         <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
       </div>
-      <!-- side tool bar -->
-      <div class="tool-bar">
-          <%= link_to '<i class="fa fa-plus" aria-hidden="true">&nbsp create new</i>'.html_safe, new_bike_path , class: "btn btn-default" %>              
-      </div>
+      <% if admin? %>
+        <!-- side tool bar -->
+        <div class="tool-bar">
+            <%= link_to '<i class="fa fa-plus" aria-hidden="true">&nbsp create new</i>'.html_safe, new_bike_path , class: "btn btn-default" %>              
+        </div>
+      <% end %>
   
     </div>
   </div>

@@ -12,6 +12,11 @@ module ApplicationHelper
     alert_type
   end
 
+  def admin? 
+    current_user.admin?
+    true
+  end
+
   def render_markdown(markdown_content)
     if !markdown_content
     return ""

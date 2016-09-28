@@ -17,7 +17,7 @@
    <div class="form-group">
       <%= f.label :birthday %>
       <div class="input-group datetimepicker">
-      <%= f.text_field :birthday,class:"form-control"%>
+      <%= f.text_field :birthday, class:"form-control"%>
       <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
           </span>
@@ -64,15 +64,23 @@
     
   <% end %>
 </div>
+<!--avatar and actions panel-->
 <div class="col-md-3">
   <div class="side-bar-scroll">
     <div class="panel panel-default">
      <div class="panel-body">
-        <div class="user-info">
-          <%= image_tag(@user.avatar? ? @user.avatar_url : "avatar/large")  %>  
-          <div class="information">
-            <p> <%= @user.nick %></p>
-            <p> <%= @user.signature %> </p>
+        <div id="user-info">
+          <div class="basic-info">
+            <%= image_tag(@user.avatar? ? @user.avatar_url : "avatar/large")  %>  
+            <div class="information">
+              <div class="nick"> <%= @user.nick %></div>
+              <div class="signature"> <%= @user.signature %> </div>
+            </div>
+          </div>
+          <div class="actions">
+            <%= link_to t(:favorite_activity), favorite_activity_users_information_index_path, class:"item col-sm-12" %> 
+            <%= link_to t(:favorite_bike), favorite_bike_users_information_index_path, class:"item col-sm-12" %> 
+            <%= link_to t(:edit_password), edit_user_password_path, class:"item col-sm-12" %>
           </div>
         </div>
      </div> 

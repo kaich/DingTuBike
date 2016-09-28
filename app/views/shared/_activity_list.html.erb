@@ -1,0 +1,14 @@
+<% for activity in activities %>
+  <tr id="<%= "activity_#{activity.id}" %>">
+    <td><%= image_tag(activity.cover.thumb.url) %></td>
+    <td>
+      <%= link_to activity.name , activity_path(activity) %> <br />
+      <%= activity.start_time %> <br />
+      <%= activity.end_time %>
+    </td>
+    <td>
+      <%= favorite_activity_tag activity %>
+      <%= delete_activity_tag activity %>
+    </td>
+  </tr>
+<% end %>

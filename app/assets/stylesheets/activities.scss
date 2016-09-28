@@ -42,3 +42,15 @@
 .end-time {
   @include prefix_fa_icon("\f273"); 
 }
+
+
+.detail-activity {
+  .actions {
+    .item {
+      a{
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

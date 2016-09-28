@@ -54,6 +54,17 @@ class BikesController  < ApplicationController
     end
 
 
+    def destroy
+      @bike = Bike.find(params[:id])
+      @bike.destroy
+    
+      respond_to do |format|
+        format.html { redirect_to(bikes_url) }
+        format.xml  { head :ok }
+      end
+    end
+
+
     def favorite 
         @bike = Bike.find(params[:id])
         @isfavorite = favorite? @bike
@@ -68,7 +79,7 @@ class BikesController  < ApplicationController
 
 private
     def bike_params
-        params.require(:bike).permit(:name,:brand,:model,:made_address,:market_time,:information,{avatars: []})
+        params.require(:bike).permit(:name,:brand,:model,:category,:material,:made_address,:market_time,:information,{avatars: []})
     end
 
 end

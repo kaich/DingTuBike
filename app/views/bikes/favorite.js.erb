@@ -1,5 +1,5 @@
 <% if @isfavorite %>
-    $('#bike_<%= @bike.id %>  div.function-buttons > a[favorite] > i').attr("class","fa fa-heart-o")
-<% else %>
     $('#bike_<%= @bike.id %>  div.function-buttons > a[favorite] > i').attr("class","fa fa-heart")
+<% else %>
+    $('#bike_<%= @bike.id %>  div.function-buttons > a[favorite] > i').attr("class","fa fa-heart-o")
 <% end %>

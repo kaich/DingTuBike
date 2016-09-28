@@ -3,16 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-div.user-info {
-  img {
-    display: inline-block;
-    height: 64px;
-    width: 64px;
+#user-info {
+  .basic-info { 
+    margin-bottom: 40px;
+    img {
+      display: inline-block;
+    }
+     
+    .information {
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      .nick {
+        font-size: 20px; 
+      }
+      .signature {
+        color: #666;
+      }
+    }
   }
-
-  .information {
-    margin-left: 10px;
-    display: inline-block;
-    vertical-align: middle;
+  .actions {
+    .item {
+      margin: 10px 0;
+    }
   }
 }

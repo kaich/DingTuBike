@@ -4,6 +4,8 @@ class CreateBikes < ActiveRecord::Migration
       t.string :name
       t.string :brand
       t.string :model
+      t.string :category
+      t.string :material
       t.string :made_address
       t.date :market_time
       t.float :price

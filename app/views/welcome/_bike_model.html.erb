@@ -12,6 +12,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
                         <h2 class="bike-name"><%= bike.name %></h2>
+                        <h4 class="bike-name"><%= Bike.human_attribute_name(:price) + " " + bike.price.to_s %></h4>
                         <hr class="star-primary">
                         <!--image carousel-->
                         <div id="avatarsCarousel" class="carousel slide" data-ride="carousel">
@@ -51,6 +52,21 @@
                             <li>
                                 <%= Bike.human_attribute_name(:brand) %>  
                                 <strong><%= bike.brand %></a>
+                                </strong>
+                            </li>
+                            <li>
+                                <%= Bike.human_attribute_name(:model) %>
+                                <strong><%= bike.model %></a>
+                                </strong>
+                            </li>
+                            <li>
+                                <%= Bike.human_attribute_name(:category) %>
+                                <strong><%= bike.category %></a>
+                                </strong>
+                            </li>
+                            <li>
+                                <%= Bike.human_attribute_name(:material) %>
+                                <strong><%= bike.material %></a>
                                 </strong>
                             </li>
                             <li>

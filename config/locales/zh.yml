@@ -30,8 +30,16 @@ zh:
   man: "男"
   woman: "女"
   close: "关闭"
+  destroy: "删除"
+  edit: "修改"
+  submit: "提交"
+  submiting: "提交中..."
+  update: "更新"
+  favorite_bike: "关注的自行车"
+  favorite_activity: "关注的活动"
   user_information_edit: "个人资料设置"
   update_user_info: "更新个人资料"
+  edit_password: "修改密码"
   update_user_information_success: "更新个人资料成功"
   #models
   activerecord:
@@ -39,16 +47,21 @@ zh:
       bike:
         name: "名称" 
         brand: "品牌"
+        price: "价格"
         model: "型号"
+        category: "类型"
+        material: "材质"
         made_address: "产地"
         market_time: "上市时间"
         information: "详细内容"
+        avatars: "图片"
       activity:
         name: "名称" 
         start_time: "开始时间" 
         end_time: "结束时间" 
         rule: "规则" 
         information: "详细内容" 
+        cover: "封面图"
       user:
         nick: "昵称"
         birthday: "生日"

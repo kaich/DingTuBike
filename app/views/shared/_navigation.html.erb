@@ -40,7 +40,8 @@
                       <% end %>
                     <% else %>
                       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <%= current_user.email %>
+                        <%= image_tag(current_user.avatar.thumb.url) %>
+                        <%= current_user.nick.blank? ? current_user.email : current_user.nick %>
                         <span class="caret"></span>
                       </a>
                       <ul class="dropdown-menu" role="menu" >
