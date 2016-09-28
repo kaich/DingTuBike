@@ -1,4 +1,4 @@
-class ActivityCoverUploader < CarrierWave::Uploader::Base
+class UserAvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -45,14 +45,13 @@ class ActivityCoverUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  
+
   include CarrierWave::MiniMagick
   
-
-  process resize_to_fill: [1600, 500]
+  process resize_to_fill: [120, 120]
 
   version :thumb do
-    process resize_to_fill: [100,100]
+    process resize_to_fill: [50,50]
   end
 
 end

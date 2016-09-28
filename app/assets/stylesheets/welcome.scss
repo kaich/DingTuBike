@@ -218,6 +218,14 @@ header {
 	}
 }
 
+.navbar-collapse {
+  .user {
+    .dropdown-menu {
+      background-color: $theme-primary;
+    }
+  }
+}
+
 @media(min-width:768px) {
     .navbar-custom {
         padding: 25px 0;

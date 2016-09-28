@@ -1,5 +1,7 @@
 class BikesController  < ApplicationController
 
+    before_action :authenticate_user! , only: [:new , :destroy , :edit ,:favorite]
+
     include BikesHelper
 
     def index

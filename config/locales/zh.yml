@@ -27,7 +27,12 @@ zh:
   change_my_password: "修改我的密码"
   forgot_your_password?: "忘记密码？"
   #common 
+  man: "男"
+  woman: "女"
   close: "关闭"
+  user_information_edit: "个人资料设置"
+  update_user_info: "更新个人资料"
+  update_user_information_success: "更新个人资料成功"
   #models
   activerecord:
     attributes:
@@ -44,4 +49,19 @@ zh:
         end_time: "结束时间" 
         rule: "规则" 
         information: "详细内容" 
-
+      user:
+        nick: "昵称"
+        birthday: "生日"
+        sex: "性别"
+        home_address: "家庭住址"
+        qq_number: "QQ"
+        phone: "电话号码"
+        signature: "个人签名"
+        intro: "个人介绍"
+        avatar: "个人图像" 
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "确认"
