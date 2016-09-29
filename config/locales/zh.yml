@@ -7,6 +7,10 @@ zh:
       about: "关于"
       location: "地址"
       signature: "格言"
+  will_paginate:
+    previous_label: "上一页"
+    next_label: "下一页"
+    page_gap: "&hellip;"
   #devise
   log_in: "登陆"
   email: "邮箱"

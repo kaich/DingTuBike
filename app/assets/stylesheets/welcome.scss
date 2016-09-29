@@ -280,7 +280,6 @@ section.success {
       margin: 0 0 15px;
       background-color: white;
       .bike-item-content {
-        background-color: #eee;
         margin: 0 5px 0;
         padding:0px;
         right: 0;
@@ -288,6 +287,7 @@ section.success {
             display: block;
             position: relative;
             max-width: 400px;
+            height: 240px;
             margin: 0 0;
             .caption {
                 background: fade($theme-success, 90%);
@@ -320,6 +320,7 @@ section.success {
                 }
             }
             .bike-name {
+              font-size: 18px;
               width: 100%;
               position: absolute;
               text-align: center;

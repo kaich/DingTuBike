@@ -20,7 +20,7 @@ module ApplicationHelper
     if current_user
       current_user.admin?
     end
-    true
+    false
   end
 
   def render_markdown(markdown_content)

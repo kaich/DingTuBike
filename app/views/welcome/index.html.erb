@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="row">
-                <%= admin.intro %>
+                <%= render_markdown admin.intro %>
             </div>
         </div>
     </section>
@@ -90,7 +90,7 @@
                     <div class="footer-col col-md-4">
                         <h3><%= t ".location" %></h3>
                         <p> 
-                          <%= admin.home_address %>
+                          <%= render_markdown admin.home_address %>
                         </p>
                     </div>
                     <div class="footer-col col-md-4">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3><%= t ".signature" %></h3>
-                        <p><%= admin.signature %></p>
+                        <p><%= render_markdown admin.signature %></p>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2016
+                        Copyright &copy; Dingtu 2016
                     </div>
                 </div>
             </div>
