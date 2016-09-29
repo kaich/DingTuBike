@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
 
-    before_action :authenticate_user! , only: [:new , :destroy , :edit ,:favorite]
+    before_action :authenticate_user! , only: [:new , :destroy , :edit , :favorite, :create_comment]
 
     include ActivitiesHelper
 
@@ -77,7 +77,6 @@ class ActivitiesController < ApplicationController
     end
 
 
-
     def favorite 
         @activity = Activity.find(params[:id])
 
@@ -90,6 +89,7 @@ class ActivitiesController < ApplicationController
             @isfavorite = true
         end
     end
+
 
     def create_comment 
       @commentable = Activity.find(params[:id])
