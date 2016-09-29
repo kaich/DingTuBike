@@ -63,6 +63,9 @@ gem 'will_paginate-bootstrap'
 #markdown 
 gem 'redcarpet'
 
+#comment
+gem 'acts_as_commentable'
+
 #前端包管理bower-rails
 gem "bower-rails", "~> 0.10.0"
 

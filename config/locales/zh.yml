@@ -46,6 +46,7 @@ zh:
   user_information_edit: "个人资料设置"
   update_user_info: "更新个人资料"
   edit_password: "修改密码"
+  create_comment: "创建评论"
   update_user_information_success: "更新个人资料成功"
   #models
   activerecord:
@@ -78,6 +79,9 @@ zh:
         signature: "个人签名"
         intro: "个人介绍"
         avatar: "个人图像" 
+      comment: 
+        title: "标题"
+        comment: "评论内容"
     errors:
       models:
         user:

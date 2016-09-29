@@ -43,6 +43,22 @@
   @include prefix_fa_icon("\f273"); 
 }
 
+.activity-list {
+  .name {
+    position: relative;
+    top: -4px;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  .time {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #666;
+  }
+  .actions {
+  }
+}
+
 
 .detail-activity {
   .actions {

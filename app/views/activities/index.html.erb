@@ -13,9 +13,7 @@
         </div>
       <% end %>
       <!-- activity list -->
-      <table class="table">
-        <%= render "shared/activity_list" , activities: @activities %>
-      </table>
+      <%= render "shared/activity_list" , activities: @activities %>
       <div class="text-center">
         <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
       </div>

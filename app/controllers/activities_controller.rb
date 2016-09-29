@@ -37,27 +37,13 @@ class ActivitiesController < ApplicationController
 
     def show
         @activity = Activity.find(params[:id])
+        @comments = @activity.comments.recent.limit(30).all
     
         respond_to do |format|
             format.html # show.html.erb
             format.xml  { render xml: @activity }
         end
     end
-
-
-    def favorite 
-        @activity = Activity.find(params[:id])
-
-        @isfavorite = favorite? @activity
-        if @isfavorite 
-            current_user.dislikes @activity                
-            @isfavorite = false
-        else
-            current_user.likes @activity
-            @isfavorite = true
-        end
-    end
-
 
     def edit
       @activity = Activity.find(params[:id])
@@ -88,6 +74,29 @@ class ActivitiesController < ApplicationController
         format.html { redirect_to(activities_url) }
         format.xml  { head :ok }
       end
+    end
+
+
+
+    def favorite 
+        @activity = Activity.find(params[:id])
+
+        @isfavorite = favorite? @activity
+        if @isfavorite 
+            current_user.dislikes @activity                
+            @isfavorite = false
+        else
+            current_user.likes @activity
+            @isfavorite = true
+        end
+    end
+
+    def create_comment 
+      @commentable = Activity.find(params[:id])
+      @comment = @commentable.comments.create
+      @comment.comment = params[:content]
+      @comment.user = current_user
+      @comment.save
     end
 
 

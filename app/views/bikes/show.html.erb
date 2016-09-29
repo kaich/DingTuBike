@@ -84,6 +84,13 @@
         </div>
       </div>
     <% end %>
+    <!-- comment -->
+    <div id="comment_box">
+      <% for comment in @comments %>
+       <%= render "shared/comment", comment: comment %> 
+      <% end %>
+    </div>
+    <%= render "shared/comment_form", model: @bike %>
   </div>
 </section>
 

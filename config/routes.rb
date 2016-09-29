@@ -19,12 +19,14 @@ Rails.application.routes.draw do
   resources :bikes do 
       member do
          patch :favorite
+         post :create_comment
       end
   end
 
   resources :activities do 
       member do
         patch :favorite
+        post :create_comment
       end
   end
 

@@ -30,6 +30,7 @@ class BikesController  < ApplicationController
 
     def show
       @bike = Bike.find(params[:id])
+      @comments = @bike.comments.recent.limit(30).all
     end
 
 
@@ -75,6 +76,15 @@ class BikesController  < ApplicationController
             current_user.likes @bike
             @isfavorite = true
         end
+    end
+
+
+    def create_comment 
+      @commentable = Activity.find(params[:id])
+      @comment = @commentable.comments.create
+      @comment.comment = params[:content]
+      @comment.user = current_user
+      @comment.save
     end
 
 private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927071755) do
+ActiveRecord::Schema.define(version: 20160929030625) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
@@ -71,6 +71,21 @@ ActiveRecord::Schema.define(version: 20160927071755) do
   add_index "bikes", ["cached_weighted_average"], name: "index_bikes_on_cached_weighted_average"
   add_index "bikes", ["cached_weighted_score"], name: "index_bikes_on_cached_weighted_score"
   add_index "bikes", ["cached_weighted_total"], name: "index_bikes_on_cached_weighted_total"
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "title",            limit: 50, default: ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.string   "role",                        default: "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "journeys", force: :cascade do |t|
     t.string   "name"
