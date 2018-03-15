@@ -1,4 +1,4 @@
-class AddAvatarsToBikes < ActiveRecord::Migration
+class AddAvatarsToBikes < ActiveRecord::Migration[5.0]
   def change
 
     add_column :bikes, :avatars, :text

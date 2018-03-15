@@ -76,7 +76,9 @@
                 </div>
             </div>
             <div class="row">
-                <%= render_markdown admin.intro %>
+                <% if admin %>
+                    <%= render_markdown admin.intro %>
+                <% end %>
             </div>
         </div>
     </section>
@@ -90,7 +92,9 @@
                     <div class="footer-col col-md-4">
                         <h3><%= t ".location" %></h3>
                         <p> 
-                          <%= render_markdown admin.home_address %>
+                          <% if admin %>
+                            <%= render_markdown admin.home_address %>
+                          <% end %>
                         </p>
                     </div>
                     <div class="footer-col col-md-4">
@@ -115,7 +119,9 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3><%= t ".signature" %></h3>
-                        <p><%= render_markdown admin.signature %></p>
+                        <% if admin %>
+                            <p><%= render_markdown admin.signature %></p>
+                        <% end %>
                     </div>
                 </div>
             </div>

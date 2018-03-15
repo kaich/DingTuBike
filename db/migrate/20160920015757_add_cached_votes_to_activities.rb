@@ -1,4 +1,4 @@
-class AddCachedVotesToActivities < ActiveRecord::Migration
+class AddCachedVotesToActivities < ActiveRecord::Migration[5.0]
   def self.up
     add_column :activities, :cached_votes_total, :integer, :default => 0
     add_column :activities, :cached_votes_score, :integer, :default => 0
